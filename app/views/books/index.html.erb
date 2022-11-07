@@ -1,17 +1,5 @@
 <h1>Books</h1>
 
-<% @book.each do |book| %>
-
-  <p>タイトル</p>
-  <span><%= link_to book.title, book_path(book.id) %></span>
-  <span><%= link_to book.body, book_path(book.id) %></span>
-
-<% end %>
-
-
-
-<h1>Books</h1>
-
 <table>
   <thead>
     <tr>
@@ -26,9 +14,9 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.body %></td>
-        <td>Show</td>
-        <td>Edit</td>
-        <td>Destroy</td>
+        <td><%= link_to "Show", book_path(book.id), method: :get %></td>
+        <td><%= link_to "Edit", edit_book_path(book.id), method: :get %></td>
+        <td><%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
   </tbody>
   <% end %>
