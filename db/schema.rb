@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2022_11_06_075855) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.string "name"
   end
 
 end
